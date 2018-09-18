@@ -32,3 +32,26 @@ target
 
 libs
 
+test/.gradle/4.10/fileHashes/fileHashes.bin
+test/build.gradle.kts
+test/manifest.json
+test/settings.gradle
+test/.gradle/4.10/gc.properties
+test/.gradle/4.10/fileChanges/last-build.bin
+test/.gradle/4.10/fileContent/fileContent.lock
+test/.gradle/4.10/fileHashes/fileHashes.lock
+test/.gradle/4.10/fileHashes/resourceHashesCache.bin
+test/.gradle/4.10/taskHistory/taskHistory.bin
+test/.gradle/4.10/taskHistory/taskHistory.lock
+test/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+test/.gradle/buildOutputCleanup/cache.properties
+test/.gradle/buildOutputCleanup/outputFiles.bin
+test/.gradle/vcs-1/gc.properties
+test/.idea/gradle.xml
+test/.idea/misc.xml
+test/.idea/vcs.xml
+test/.idea/workspace.xml
+test/.idea/modules/test_main.iml
+test/.idea/modules/test_test.iml
+test/specs/basics.cpt
+test/src/test/java/StepImpl.java.h

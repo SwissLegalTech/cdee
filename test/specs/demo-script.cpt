@@ -1,0 +1,17 @@
+# Initialise network with the contract <templateFile> on the peers <peers>
+* connect to the peers <peers>
+* deploy the contract template file <templateFile>
+
+# <seller> makes offer to <buyer>
+* add the following events to "offer" on peer <seller>
+      | args | events  |
+      |------|---------|
+      | <seller> | InstantiateContract{timestamp=#2018-07-25T17:01:00Z#,agent="$(arg1)", invoiceAmount=10.0, currency=EUR, discount=11.0, choiceOfLaw="myLaw", placeOfJuristiction="here", startContract = #2018-07-25T17:01:00Z#, endContract = #2018-10-25T17:01:00Z#, deliveryObject = "bla", contractID = "122344"} |
+      | <buyer> | |
+
+#  <buyer> accepts offer
+* add the following events to "offer" on peer <buyer>
+      | args | events  |
+      |------|---------|
+      | <seller> | AcceptContract{timestamp=#2018-07-26T17:01:00Z#,agent="$(arg2)", contractID = "122344"} |
+      | <buyer> | |
