@@ -30,11 +30,8 @@ gauge_bin
 # Gauge - java class target dir
 target
 
-libs
-
 test/.gradle/4.10/fileHashes/fileHashes.bin
 test/build.gradle.kts
-test/manifest.json
 test/settings.gradle
 test/.gradle/4.10/gc.properties
 test/.gradle/4.10/fileChanges/last-build.bin
