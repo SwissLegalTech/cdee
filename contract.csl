@@ -35,7 +35,7 @@ type ProvideDelivery : Event {
 
 type MakePayment : Event {
  invoiceAmount : Float,
- paymentMethod : PaymentMethod,
+ paymentMethod : PaymentMethod, cg6sg
  contractID : String
 }
 
