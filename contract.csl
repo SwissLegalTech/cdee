@@ -1,1 +1,56 @@
+type Currency
+ | CHF
+ | EUR
+ | USD
+ | BTC
+type InstantiateContract : Event {
+ invoiceAmount : Float,
+ currency : Currency,
+ discount : Float,
+ choiceOfLaw : String,
+ placeOfJuristiction : String,
+ startContract : DateTime,
+ endContract : DateTime,
+ deliveryObject : String,
+ contractID : String
+}
+type RejectContract : Event {
+ contractID : String
+}
+type AcceptContract : Event {
+ contractID : String
+}
+type ProvideDelivery : Event {
+ contractID : String
+}
+type PaymentMethod
+ | CreditCard
+ | Invoice
+ | PayPal
+type MakePayment : Event {
+ invoiceAmount : Float,
+ paymentMethod : PaymentMethod,
+ contractID : String
+}
+template DisputeResolutionContract (seller, buyer) =
+<seller> i : InstantiateContract
+then
+(
+<buyer> a : AcceptContract where
+ a.timestamp <= DateTime::addDays i.timestamp 7 &&
+ a.contractID = i.contractID
+or
+ <buyer> r : RejectContract where
+ r.timestamp > DateTime::addDays i.timestamp 7 &&
+ r.contractID = i.contractID
+ then
+ failure
+)
 
+then
+<seller> p : ProvideDelivery where
+ p.contractID = i.contractID
+then
+<buyer> m : MakePayment where
+ m.contractID = i.contractID &&
+ m.invoiceAmount = i.invoiceAmount
